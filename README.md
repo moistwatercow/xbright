@@ -1,23 +1,21 @@
 # xbright
-A simple bash script used to easily get and change the brightness of a monitor.
+A simple bash script used to easily get and change the brightness of a monitor using Xorg.
 
 ## Installation
-
-Install xbright directly to the /bin directory.<br>
-`# wget -O /bin/xbright https://raw.githubusercontent.com/charles-peck/xbright/main/bright.sh`<br>
-`# chmod +x /bin/xbright`<br>
-
-Which can then be used like so: `xbright [commands]`
-
-### or
-
 Install xbright as a .sh file<br>
-`$ wget -O xbright.sh https://raw.githubusercontent.com/charles-peck/xbright/main/bright.sh`<br>
+`$ wget -O xbright.sh https://raw.githubusercontent.com/moistwatercow/xbright/main/bright.sh`<br>
 `# chmod +x xbright.sh`<br>
 
-Which can then be used like so: `sh /path/to/file/xbright.sh [commands]`
+Which can then be used like so: `sh /path/to/file/xbright.sh [commands]`<br>
+You can also place the shell file in /bin for easy access if you wish.
 
 ## Usage
+`xbright $monitorname [$expression]`<br>
+
+Get brightness
+`xbright $monitorname`
+
+Increment/Decrement brightness
 `xbright $monitorname [$expression]`
 
 ### Examples
@@ -36,8 +34,9 @@ Decrease the brightness of DisplayPort-0 by 0.05<br>
 
 ## When to use
 - Keybind to increment/decrement brightness
-- Status bar to get brightness (ex: slstatus)
+- Status bar to get brightness (ex: slstatus, conky)
 
 ## Additional information
 - The monitor name can be found by running the `xrandr` command.
-- The expression can really be any mathematical expression but its recomended to stick with only + and -.
+- The expression can be any mathematical expression but its recomended to stick with only + and -.
+- Brightness is represented on a scale of 0 to 1, with 0 being off and 1 being 100%. It is possible to go above 1, but it may cause some unintended problems, nothing to do with xbright though.
